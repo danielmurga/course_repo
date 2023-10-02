@@ -5,7 +5,7 @@
        --name allinone \
        --pid=host \
        --privileged \
-       -e CLUSTER_JOIN_ADDR=192.168.1.117 \
+       -e CLUSTER_JOIN_ADDR=10.204.0.21 \
        -e NV_PLATFORM_INFO=platform=Docker \
        -p 18300:18300 \
        -p 18301:18301 \
@@ -20,12 +20,3 @@
        -v /proc:/host/proc:ro \
        neuvector/allinone:latest    
 
-    #scanner image
- 
-     docker run -td \
-       --name scanner \
-       -e CLUSTER_JOIN_ADDR=192.168.1.117 \
-       -e NV_PLATFORM_INFO=platform=Docker \
-       -p 18402:18402 \
-       -v /var/run/docker.sock:/var/run/docker.sock:ro \
-       neuvector/scanner:latest
